@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcours IA — Apprendre l'Intelligence Artificielle</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/chat.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"></div>
+
+  <!-- ═══════════════════════════════════════ NAV ═══ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">IA<span>·</span>ROADMAP</a>
+      <ul class="nav-links">
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#phases">Phases</a></li>
+        <li><a href="#ressources">Ressources</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <button class="nav-cta" onclick="openChat()">Demander à Claude →</button>
+      <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#parcours" onclick="toggleMenu()">Parcours</a>
+      <a href="#phases" onclick="toggleMenu()">Phases</a>
+      <a href="#ressources" onclick="toggleMenu()">Ressources</a>
+      <a href="#faq" onclick="toggleMenu()">FAQ</a>
+      <button onclick="openChat();toggleMenu()">Demander à Claude</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ HERO ═══ -->
+  <section class="hero" id="home">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Mise à jour 2025 · Parcours complet
+      </div>
+      <h1 class="hero-title">
+        Apprendre<br/>
+        <em>l'Intelligence</em><br/>
+        Artificielle
+      </h1>
+      <p class="hero-sub">
+        De zéro à expert en 6 phases structurées.<br/>
+        Avec Claude comme tuteur personnel intégré.
+      </p>
+      <div class="hero-actions">
+        <a href="#phases" class="btn-primary">Voir le parcours</a>
+        <button class="btn-secondary" onclick="openChat()">
+          <span class="btn-icon">🤖</span> Poser une question à Claude
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>6</strong><span>Phases</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><strong>~12</strong><span>Mois</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat"><strong>∞</strong><span>Possibilités</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INTRO BAND ═══ -->
+  <div class="band" id="parcours">
+    <div class="band-inner">
+      <span>Python</span><span class="sep">·</span>
+      <span>Machine Learning</span><span class="sep">·</span>
+      <span>Deep Learning</span><span class="sep">·</span>
+      <span>Transformers</span><span class="sep">·</span>
+      <span>LLMs</span><span class="sep">·</span>
+      <span>Agents IA</span><span class="sep">·</span>
+      <span>RAG</span><span class="sep">·</span>
+      <span>Prompt Engineering</span><span class="sep">·</span>
+      <span>Claude</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ ABOUT ═══ -->
+  <section class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="section-label">Pourquoi ce parcours ?</p>
+          <h2>L'IA s'apprend mieux avec une carte et un guide.</h2>
+          <p>Il existe des milliers de ressources sur l'IA — mais peu de chemins clairs. Ce parcours structure votre apprentissage de façon progressive, du concept à l'application réelle. Et Claude est là à chaque étape pour répondre à vos questions en temps réel.</p>
+          <div class="about-features">
+            <div class="feature">
+              <div class="feature-icon">🗺️</div>
+              <div>
+                <strong>Structuré</strong>
+                <p>6 phases progressives, de la culture générale aux agents autonomes.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🤖</div>
+              <div>
+                <strong>IA intégrée</strong>
+                <p>Claude répond à vos questions directement sur ce site, 24h/24.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🎯</div>
+              <div>
+                <strong>Pratique</strong>
+                <p>Ressources concrètes, projets réels, prompts prêts à l'emploi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="visual-card">
+            <div class="vc-header">
+              <div class="vc-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="vc-title">parcours.ai</span>
+            </div>
+            <div class="vc-body">
+              <div class="vc-line"><span class="vc-key">durée</span><span class="vc-val">~12 mois</span></div>
+              <div class="vc-line"><span class="vc-key">niveau</span><span class="vc-val">débutant → expert</span></div>
+              <div class="vc-line"><span class="vc-key">phases</span><span class="vc-val">6 étapes clés</span></div>
+              <div class="vc-line"><span class="vc-key">tuteur</span><span class="vc-val highlight">Claude AI ✦</span></div>
+              <div class="vc-line"><span class="vc-key">coût</span><span class="vc-val">gratuit</span></div>
+            </div>
+            <div class="vc-footer">
+              <div class="vc-progress-bar">
+                <div class="vc-progress-fill" id="vcFill"></div>
+              </div>
+              <span id="vcPct">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PHASES ═══ -->
+  <section class="phases-section" id="phases">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Le parcours complet</p>
+        <h2>6 Phases pour maîtriser l'IA</h2>
+        <p>Cochez les phases terminées pour suivre votre avancement.</p>
+      </div>
+
+      <div class="phases-list" id="phasesList">
+
+        <article class="phase-item reveal" data-num="1" data-color="#6ee7b7">
+          <div class="phase-line-col">
+            <button class="phase-check-btn" onclick="togglePhase(1)">
+              <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+            </button>
+            <div class="phase-connector"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-tag" style="--c:#6ee7b7">Phase 01</span>
+              <span class="phase-duration">2 – 4 semaines</span>
+            </div>
+            <h3>🧱 Les Fondations</h3>
+            <p>Comprendre ce qu'est l'IA, ses grandes familles (symbolique, statistique, deep learning) et ses applications concrètes. Pas de code encore — de la culture, de la curiosité, et les bons réflexes mentaux.</p>
+            <div class="phase-tags">
+              <span>Histoire de l'IA</span><span>ML vs Deep Learning</span>
+              <span>IA faible vs forte</span><span>Cas d'usage</span><span>Éthique</span>
+            </div>
+            <button class="phase-claude-btn" onclick="askClaude('Je débute en IA — explique-moi la différence entre IA, Machine Learning et Deep Learning avec des analogies simples.')">
+              🤖 Demander à Claude sur cette phase →
+            </button>
+          </div>
+        </article>
+
+        <article class="phase-item reveal" data-num="2" data-color="#38bdf8">
+          <div class="phase-line-col">
+            <button class="phase-check-btn" onclick="togglePhase(2)">
+              <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+            </button>
+            <div class="phase-connector"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-tag" style="--c:#38bdf8">Phase 02</span>
+              <span class="phase-duration">4 – 8 semaines</span>
+            </div>
+            <h3>🐍 Python & Maths Essentiels</h3>
+            <p>Python est le langage de l'IA. Les maths (algèbre linéaire, probabilités, statistiques) sont son langage secret. Pas besoin d'être expert — juste assez pour comprendre et construire.</p>
+            <div class="phase-tags">
+              <span>Python bases</span><span>NumPy · Pandas</span>
+              <span>Matrices & vecteurs</span><span>Probabilités</span><span>Gradient</span>
+            </div>
+            <button class="phase-claude-btn" onclick="askClaude('Je commence Python pour l\'IA. Quels sont les concepts Python absolument essentiels à maîtriser en premier ?')">
+              🤖 Demander à Claude sur cette phase →
+            </button>
+          </div>
+        </article>
+
+        <article class="phase-item reveal" data-num="3" data-color="#f59e0b">
+          <div class="phase-line-col">
+            <button class="phase-check-btn" onclick="togglePhase(3)">
+              <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+            </button>
+            <div class="phase-connector"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-tag" style="--c:#f59e0b">Phase 03</span>
+              <span class="phase-duration">6 – 10 semaines</span>
+            </div>
+            <h3>⚙️ Machine Learning Classique</h3>
+            <p>Avant les LLMs, il y a le ML traditionnel. Régression, classification, clustering — ces algorithmes sont toujours utilisés partout et forment la base solide de tout data scientist.</p>
+            <div class="phase-tags">
+              <span>Régression</span><span>Classification</span>
+              <span>Random Forest</span><span>SVM</span><span>Scikit-learn</span>
+            </div>
+            <button class="phase-claude-btn" onclick="askClaude('Explique-moi intuitivement comment fonctionne un arbre de décision en Machine Learning, avec un exemple concret.')">
+              🤖 Demander à Claude sur cette phase →
+            </button>
+          </div>
+        </article>
+
+        <article class="phase-item reveal" data-num="4" data-color="#a78bfa">
+          <div class="phase-line-col">
+            <button class="phase-check-btn" onclick="togglePhase(4)">
+              <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+            </button>
+            <div class="phase-connector"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-tag" style="--c:#a78bfa">Phase 04</span>
+              <span class="phase-duration">8 – 12 semaines</span>
+            </div>
+            <h3>🧠 Deep Learning</h3>
+            <p>Comment fonctionne un réseau de neurones ? Backpropagation, CNNs pour les images, RNNs pour le texte. C'est ici que la vraie magie commence — et que Claude prend racine.</p>
+            <div class="phase-tags">
+              <span>Neurones artificiels</span><span>Backprop</span>
+              <span>CNN · RNN</span><span>PyTorch</span><span>Transfer Learning</span>
+            </div>
+            <button class="phase-claude-btn" onclick="askClaude('Explique-moi la backpropagation avec un exemple numérique simple, étape par étape, comme si je n\'avais jamais fait de calcul différentiel.')">
+              🤖 Demander à Claude sur cette phase →
+            </button>
+          </div>
+        </article>
+
+        <article class="phase-item reveal" data-num="5" data-color="#f472b6">
+          <div class="phase-line-col">
+            <button class="phase-check-btn" onclick="togglePhase(5)">
+              <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+            </button>
+            <div class="phase-connector"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-tag" style="--c:#f472b6">Phase 05</span>
+              <span class="phase-duration">4 – 8 semaines</span>
+            </div>
+            <h3>🔤 LLMs & Prompt Engineering</h3>
+            <p>L'ère des Transformers et des grands modèles. Comprendre l'architecture, le fine-tuning, le RAG, et maîtriser l'art du prompt — la compétence la plus demandée en 2025.</p>
+            <div class="phase-tags">
+              <span>Transformers</span><span>Attention</span>
+              <span>RLHF</span><span>Prompt Engineering</span><span>RAG</span>
+            </div>
+            <button class="phase-claude-btn" onclick="askClaude('Comment fonctionne le mécanisme d\'attention dans les Transformers ? Utilise une analogie du monde réel pour que ce soit intuitif.')">
+              🤖 Demander à Claude sur cette phase →
+            </button>
+          </div>
+        </article>
+
+        <article class="phase-item reveal" data-num="6" data-color="#fb923c">
+          <div class="phase-line-col">
+            <button class="phase-check-btn" onclick="togglePhase(6)">
+              <svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>
+            </button>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-tag" style="--c:#fb923c">Phase 06</span>
+              <span class="phase-duration">En continu</span>
+            </div>
+            <h3>🚀 Agents & Projets Réels</h3>
+            <p>Construire de vraies applications IA : agents autonomes, pipelines RAG, outils métiers. Déployer, itérer, apprendre sur le terrain. C'est ici que vous devenez expert.</p>
+            <div class="phase-tags">
+              <span>Agents autonomes</span><span>LangChain</span>
+              <span>Claude Code</span><span>MCP</span><span>Déploiement</span>
+            </div>
+            <button class="phase-claude-btn" onclick="askClaude('Je veux construire mon premier agent IA autonome. Par où commencer, et quels outils utiliser en 2025 ?')">
+              🤖 Demander à Claude sur cette phase →
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Progress tracker -->
+      <div class="progress-tracker reveal" id="progressTracker">
+        <div class="pt-label">Votre progression</div>
+        <div class="pt-bar-bg"><div class="pt-bar-fill" id="ptFill"></div></div>
+        <div class="pt-count" id="ptCount">0 / 6 phases</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ RESSOURCES ═══ -->
+  <section class="resources-section" id="ressources">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Outils & lectures</p>
+        <h2>Ressources Recommandées</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="res-card reveal">
+          <div class="res-icon">📺</div>
+          <div class="res-type">Vidéo gratuite</div>
+          <div class="res-name">3Blue1Brown — Neural Networks</div>
+          <div class="res-desc">La meilleure explication visuelle des réseaux de neurones sur YouTube.</div>
+        </div>
+        <div class="res-card reveal">
+          <div class="res-icon">🎓</div>
+          <div class="res-type">Cours en ligne</div>
+          <div class="res-name">fast.ai — Practical Deep Learning</div>
+          <div class="res-desc">Approche pratique d'abord. Construire avant de comprendre la théorie.</div>
+        </div>
+        <div class="res-card reveal">
+          <div class="res-icon">📖</div>
+          <div class="res-type">Livre</div>
+          <div class="res-name">Hands-On ML — Aurélien Géron</div>
+          <div class="res-desc">La référence francophone pour le Machine Learning pratique avec Scikit-learn.</div>
+        </div>
+        <div class="res-card reveal">
+          <div class="res-icon">💻</div>
+          <div class="res-type">Plateforme</div>
+          <div class="res-name">Kaggle Learn</div>
+          <div class="res-desc">Cours Python, ML et Data Science gratuits avec environnement intégré.</div>
+        </div>
+        <div class="res-card reveal">
+          <div class="res-icon">📄</div>
+          <div class="res-type">Paper fondateur</div>
+          <div class="res-name">Attention Is All You Need</div>
+          <div class="res-desc">Le papier qui a tout changé. À lire après la phase 4.</div>
+        </div>
+        <div class="res-card reveal">
+          <div class="res-icon">🛠️</div>
+          <div class="res-type">Outil IA</div>
+          <div class="res-name">Claude Code (CLI)</div>
+          <div class="res-desc">L'outil de coding IA d'Anthropic. Idéal pour la phase 6 et les projets réels.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FAQ ═══ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Questions fréquentes</p>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Faut-il être mathématicien pour apprendre l'IA ?
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>Non. Des notions de base suffisent au départ : comprendre ce qu'est une moyenne, une probabilité, une dérivée. Les maths s'apprennent en parallèle, au fur et à mesure des besoins. La phase 2 du parcours couvre exactement ce qu'il faut.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Combien de temps par semaine faut-il consacrer ?
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>Entre 5 et 10 heures par semaine pour progresser de façon régulière. Le parcours est conçu pour être suivi en parallèle d'un emploi ou d'études — pas en immersion totale.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Comment Claude peut-il m'aider à apprendre ?
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>Claude agit comme un tuteur disponible 24h/24 : il explique les concepts à votre niveau, corrige votre code, répond à vos questions, génère des exercices pratiques et adapte ses explications à ce que vous ne comprenez pas.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Par quelle phase commencer si j'ai déjà des bases en Python ?
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>Si vous maîtrisez Python, commencez directement par la Phase 3 (Machine Learning Classique). Si vous connaissez aussi Scikit-learn, passez à la Phase 4 (Deep Learning).</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-cta reveal">
+        <p>Votre question n'est pas dans la liste ?</p>
+        <button class="btn-primary" onclick="openChat()">🤖 Poser la question à Claude directement</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER ═══ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">IA<span>·</span>ROADMAP</div>
+        <p>Un parcours structuré pour apprendre l'IA, avec Claude comme guide.</p>
+        <p class="footer-credit">Propulsé par <strong>Claude</strong> — Anthropic</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ CHAT WIDGET ═══ -->
+  <div id="chatBubble" onclick="openChat()">
+    <span class="bubble-icon">🤖</span>
+    <span class="bubble-label">Demander à Claude</span>
+    <div class="bubble-ping"></div>
+  </div>
+
+  <div id="chatOverlay" onclick="closeChat()"></div>
+
+  <div id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div class="chat-info">
+        <strong>Claude</strong>
+        <span>Tuteur IA · Toujours disponible</span>
+      </div>
+      <button class="chat-close" onclick="closeChat()">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg msg-ai">
+        <div class="msg-bubble">
+          Bonjour ! Je suis Claude, votre tuteur IA. 👋<br/><br/>
+          Posez-moi n'importe quelle question sur le parcours, les concepts d'IA, ou votre apprentissage — je suis là pour vous aider.
+        </div>
+      </div>
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button onclick="askClaude('Par quelle phase devrais-je commencer si je suis débutant complet ?')">Par où commencer ?</button>
+        <button onclick="askClaude('Explique-moi ce qu\'est un LLM comme Claude en termes simples.')">C'est quoi un LLM ?</button>
+        <button onclick="askClaude('Quelles sont les meilleures ressources gratuites pour apprendre l\'IA en français ?')">Ressources gratuites ?</button>
+      </div>
+    </div>
+    <div class="chat-input-wrap">
+      <input type="text" id="chatInput" placeholder="Posez votre question..." onkeydown="if(event.key==='Enter')sendMessage()" />
+      <button id="sendBtn" onclick="sendMessage()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="js/canvas.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
